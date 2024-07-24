@@ -11,7 +11,8 @@
 <body>
   <header>
     <div class="h-48 bg-customBlue flex flex-row justify-between px-2 min-h-full items-center">
-      <img class="w-40 h-36 m mt-2 ml-2 mb-2 mr-6 px-2 py-2 rounded-full" src="src/images/logo.jpg" alt="logofile" />
+      <a href="index.html"><img class="w-40 h-36 m mt-2 ml-2 mb-2 mr-6 px-2 py-2 rounded-full" src="src/images/logo.jpg"
+          alt="logofile" /></a>
       <nav>
         <ul class="text-white flex space-x-4 pr-20 text-xl">
           <li>
@@ -19,6 +20,9 @@
           </li>
           <li>
             <a href="journal.html" class="hover:underline cursor-pointer pr-20 font-extrabold">Our Journal</a>
+          </li>
+          <li>
+            <a href="#category" class="hover:underline cursor-pointer font-extrabold pr-20">Category</a>
           </li>
           <li>
             <a href="#mycontact" class="hover:underline cursor-pointer font-extrabold pr-20">Contact Us</a>
@@ -53,8 +57,10 @@
   </div>
   <main>
     <div id="movies-container"></div>
+    <div id="notification" class="fixed top-5 right-5 hidden bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg">
+    </div>
   </main>
-  <div class="relative text-center text-white mb-6">
+  <section class="relative text-center text-white mb-6">
     <img class="w-full " src="src/images/testimonal-bg.jpg" alt="section image" />
     <div class="absolute top-auto px-20 bottom-10 left-0 right-0">
       <h1 class="text-4xl font-bold mb-8 text-center">
@@ -74,8 +80,8 @@
         Explore more
       </button>
     </div>
-  </div>
-  <div class="ml-28 mt-20 pb-10 text-primary">
+  </section>
+  <section id="category" class="ml-28 mt-20 pb-10 text-primary">
     <h1 class="text-4xl font-bold mb-8">
       Find your favorite movie in category
     </h1>
@@ -88,45 +94,47 @@
       and stay updated with all things cinema. Dive in and start your
       cinematic journey with us today.
     </p>
-  </div>
-  <div class="flex justify-between flex-wrap mx-28">
-    <div>
-      <img src="./src/images/thriller.jpg" alt="Image for Small Plants" class="max-h-48" />
-      <h4 class="text-center font-roboto p-4">
-        <a href="#" class="hover:underline">Thriller Movies</a>
-      </h4>
+  </section>
+  <section>
+    <div class="flex justify-between flex-wrap mx-28">
+      <div>
+        <img src="./src/images/thriller.jpg" alt="Image for Small Plants" class="max-h-48" />
+        <h4 class="text-center font-roboto p-4">
+          <a href="#" class="hover:underline">Thriller Movies</a>
+        </h4>
+      </div>
+      <div>
+        <img src="./src/images/animation.jpg" alt="Image for Medium Plants" class="max-h-48" />
+        <h4 class="text-center font-roboto p-4">
+          <a href="#" class="hover:underline">Animation Movies</a>
+        </h4>
+      </div>
+      <div>
+        <img src="./src/images/action.jpg" alt="Image for Large Plants" class="max-h-48" />
+        <h4 class="text-center font-roboto p-4">
+          <a href="#" class="hover:underline">Action Movies</a>
+        </h4>
+      </div>
+      <div>
+        <img src="./src/images/suspance.jpg" alt="Image for Succulents" class="max-h-48" />
+        <h4 class="text-center font-roboto p-4">
+          <a href="#" class="hover:underline">Suspance Movies</a>
+        </h4>
+      </div>
+      <div>
+        <img src="./src/images/horror.jpg" alt="Image for Hanging Plants" class="max-h-48" />
+        <h4 class="text-center font-roboto p-4">
+          <a href="#" class="hover:underline">Horror Movies</a>
+        </h4>
+      </div>
     </div>
-    <div>
-      <img src="./src/images/animation.jpg" alt="Image for Medium Plants" class="max-h-48" />
-      <h4 class="text-center font-roboto p-4">
-        <a href="#" class="hover:underline">Animation Movies</a>
-      </h4>
+    <div class="mt-8 mb-16 flex justify-end mr-28">
+      <button
+        class="bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent hover:bg-blue-600 rounded">
+        Explore more category
+      </button>
     </div>
-    <div>
-      <img src="./src/images/action.jpg" alt="Image for Large Plants" class="max-h-48" />
-      <h4 class="text-center font-roboto p-4">
-        <a href="#" class="hover:underline">Action Movies</a>
-      </h4>
-    </div>
-    <div>
-      <img src="./src/images/suspance.jpg" alt="Image for Succulents" class="max-h-48" />
-      <h4 class="text-center font-roboto p-4">
-        <a href="#" class="hover:underline">Suspance Movies</a>
-      </h4>
-    </div>
-    <div>
-      <img src="./src/images/horror.jpg" alt="Image for Hanging Plants" class="max-h-48" />
-      <h4 class="text-center font-roboto p-4">
-        <a href="#" class="hover:underline">Horror Movies</a>
-      </h4>
-    </div>
-  </div>
-  <div class="mt-8 mb-16 flex justify-end mr-28">
-    <button
-      class="bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent hover:bg-blue-600 rounded">
-      Explore more category
-    </button>
-  </div>
+  </section>
   <footer>
     <div id="mycontact"
       class="h-48 bg-customBlue flex flex-row font-2xl justify-between text-white px-28 py-4 min-h-full items-center">

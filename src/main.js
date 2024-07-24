@@ -75,7 +75,7 @@ const fetchData = (movies) => {
     button.addEventListener("click", addToCart);
   });
 };
-function addToCart(event) {
+const addToCart = (event) => {
   const button = event.target;
   const movieId = button.getAttribute("data-id");
   const movieTitle = button.getAttribute("data-title");
@@ -87,7 +87,7 @@ function addToCart(event) {
 
   // Check if the movie is already in the cart based on its ID
   if (cart.some((movie) => movie.id === movieId)) {
-    alert(`${movieTitle} is already in your Favorite!`);
+    showNotification(`${movieTitle} is already in your Favorite!`);
     return;
   }
 
@@ -98,8 +98,8 @@ function addToCart(event) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // Display a success message
-  alert(`${movieTitle} has been added to your Favorite!`);
-}
+  showNotification(`${movieTitle} has been added to your Favorite!`);
+};
 const searchData = (searchTerm) => {
   const filteredMovies = data.results.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm)
@@ -110,4 +110,12 @@ const searchData = (searchTerm) => {
   } else {
     alert("No movies found matching your search.");
   }
+};
+const showNotification = (message) => {
+  const notification = document.getElementById("notification");
+  notification.textContent = message;
+  notification.classList.remove("hidden");
+  setTimeout(() => {
+    notification.classList.add("hidden");
+  }, 5000);
 };
