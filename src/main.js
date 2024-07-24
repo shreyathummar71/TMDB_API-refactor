@@ -14,11 +14,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.log("Fetch Error", error);
   }
-  document.getElementById("searchMovie").addEventListener("click", () => {
-    const searchTerm = document
-      .getElementById("searchInput")
-      .value.toLowerCase();
-    searchData(searchTerm);
+
+  //await searchData(searchTerm) is waiting for the promise returned by the searchData function to resolve.
+  document.getElementById("searchMovie").addEventListener("click", async () => {
+    try {
+      const searchTerm = document
+        .getElementById("searchInput")
+        .value.toLowerCase();
+      // The await keyword is used inside an async function to wait for a promise to resolve
+      await searchData(searchTerm);
+    } catch (error) {
+      console.error("An Error Occured", error.message);
+    }
   });
 });
 const fetchData = (movies) => {
@@ -100,14 +107,21 @@ function addToCart(event) {
   // Display a success message
   alert(`${movieTitle} has been added to your Favorite!`);
 }
-const searchData = (searchTerm) => {
-  const filteredMovies = data.results.filter((movie) =>
-    movie.title.toLowerCase().includes(searchTerm)
-  );
 
-  if (filteredMovies.length > 0) {
-    fetchData(filteredMovies);
-  } else {
-    alert("No movies found matching your search.");
+async function searchData(searchTerm) {
+  // Wrapped the searchData function in a try...catch block to catch any errors that might occur during execution.
+  try {
+    const filteredMovies = data.results.filter((movie) =>
+      movie.title.toLowerCase().includes(searchTerm)
+    );
+
+    if (filteredMovies.length > 0) {
+      fetchData(filteredMovies);
+    } else {
+      document.getElementById("Not-Found-Movie").innerHTML =
+        " No movies found matching your search.";
+    }
+  } catch (error) {
+    console.error("Error during search:", error.message);
   }
-};
+}
