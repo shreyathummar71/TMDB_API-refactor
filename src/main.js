@@ -14,18 +14,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.log("Fetch Error", error);
   }
-
-  //await searchData(searchTerm) is waiting for the promise returned by the searchData function to resolve.
-  document.getElementById("searchMovie").addEventListener("click", async () => {
-    try {
-      const searchTerm = document
-        .getElementById("searchInput")
-        .value.toLowerCase();
-      // The await keyword is used inside an async function to wait for a promise to resolve
-      await searchData(searchTerm);
-    } catch (error) {
-      console.error("An Error Occured", error.message);
-    }
+  document.getElementById("searchMovie").addEventListener("click", () => {
+    const searchTerm = document
+      .getElementById("searchInput")
+      .value.toLowerCase();
+    searchData(searchTerm);
   });
 });
 const fetchData = (movies) => {
@@ -82,7 +75,7 @@ const fetchData = (movies) => {
     button.addEventListener("click", addToCart);
   });
 };
-function addToCart(event) {
+const addToCart = (event) => {
   const button = event.target;
   const movieId = button.getAttribute("data-id");
   const movieTitle = button.getAttribute("data-title");
@@ -94,7 +87,7 @@ function addToCart(event) {
 
   // Check if the movie is already in the cart based on its ID
   if (cart.some((movie) => movie.id === movieId)) {
-    alert(`${movieTitle} is already in your Favorite!`);
+    showNotification(`${movieTitle} is already in your Favorite!`);
     return;
   }
 
@@ -105,23 +98,24 @@ function addToCart(event) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // Display a success message
-  alert(`${movieTitle} has been added to your Favorite!`);
-}
+  showNotification(`${movieTitle} has been added to your Favorite!`);
+};
+const searchData = (searchTerm) => {
+  const filteredMovies = data.results.filter((movie) =>
+    movie.title.toLowerCase().includes(searchTerm)
+  );
 
-async function searchData(searchTerm) {
-  // Wrapped the searchData function in a try...catch block to catch any errors that might occur during execution.
-  try {
-    const filteredMovies = data.results.filter((movie) =>
-      movie.title.toLowerCase().includes(searchTerm)
-    );
-
-    if (filteredMovies.length > 0) {
-      fetchData(filteredMovies);
-    } else {
-      document.getElementById("Not-Found-Movie").innerHTML =
-        " No movies found matching your search.";
-    }
-  } catch (error) {
-    console.error("Error during search:", error.message);
+  if (filteredMovies.length > 0) {
+    fetchData(filteredMovies);
+  } else {
+    alert("No movies found matching your search.");
   }
-}
+};
+const showNotification = (message) => {
+  const notification = document.getElementById("notification");
+  notification.textContent = message;
+  notification.classList.remove("hidden");
+  setTimeout(() => {
+    notification.classList.add("hidden");
+  }, 4000);
+};

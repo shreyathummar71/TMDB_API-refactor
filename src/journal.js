@@ -93,6 +93,30 @@ const saveNote = (event) => {
   // Clear the textarea after saving the note
   document.getElementById(`note-input-${movieId}`).value = "";
 
-  // Display a success message
-  alert("Your note has been saved!");
+  // Create a success message element
+  const messageContainer = document.createElement("div");
+  messageContainer.classList.add(
+    "fixed",
+    "bottom-auto",
+    "left-auto",
+    "right-5",
+    "top-5",
+    "transform",
+    "bg-green-500",
+    "text-white",
+    "py-2",
+    "px-4",
+    "rounded",
+    "shadow-lg",
+    "z-50"
+  );
+  messageContainer.innerText = "Your note has been saved!";
+
+  // Append the message container to the body or a specific container
+  document.body.appendChild(messageContainer);
+
+  // Remove the message after a few seconds
+  setTimeout(() => {
+    messageContainer.remove();
+  }, 3000);
 };
