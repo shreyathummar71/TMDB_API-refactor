@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="h-48 bg-customBlue flex flex-row justify-between px-2 min-h-full items-center">
+            <a href="index.html"><img class="w-40 h-36 m mt-2 ml-2 mb-2 mr-6 px-2 py-2 rounded-full"
+                    src="src/images/logo.jpg" alt="logofile" /></a>
+            <nav>
+                <ul class="text-white flex space-x-4 pr-20 text-xl">
+                    <li>
+                        <a href="index.html" class="hover:underline cursor-pointer font-extrabold pr-20">Home</a>
+                    </li>
+                    <li>
+                        <a href="journal.html" class="hover:underline cursor-pointer pr-20 font-extrabold">Our
+                            Journal</a>
+                    </li>
+                    <li>
+                        <a href="index.html/#category"
+                            class="hover:underline cursor-pointer font-extrabold pr-20">Category</a>
+                    </li>
+                    <li>
+                        <a href="#mycontact" class="hover:underline cursor-pointer font-extrabold pr-20">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="bg-secondary text-white py-20 px-8 shadow-md mb-6">
+        <h1 class="text-4xl font-bold mb-4 text-center">
+            Discover, Enjoy, and Document Your Cinematic Journey!
+        </h1>
+        <p class="text-xl mb-6 text-center">
+            Welcome to your personalized movie hub! Here, you will discover a curated selection of your favorite movies,
+            meticulously organized for easy browsing and enjoyment. Our platform goes beyond just listing movies; it
+            allows you to dive deep into each film by creating detailed notes. You can jot down memorable quotes,
+            analyze intriguing plot twists, and document your thoughts and feelings about each movie. This feature helps
+            you keep track of what makes each film special and enhances your viewing experience.
+        </p>
+    </div>
+    <main>
+        <div id="favorites-container"> </div>
+    </main>
+    <footer>
+        <div id="mycontact"
+            class="h-48 bg-customBlue flex flex-row font-2xl justify-between text-white px-28 py-4 min-h-full items-center">
+            <p class="text-sm text-white font-2xl">
+                &copy; 2024 MoviesHub. All rights reserved.
+            </p>
+            <div class="flex flex-col items-center md:items-end text-sm">
+                <p class="font-bold font-2xl pb-2">Contact Us:-</p>
+                <p>Röntgenstr. 9</p>
+                <p>10453 Berlin</p>
+                <p>
+                    Email:
+                    <a href="mailto:inquiry@movieshub.com" class="underline">inquiry@movieshub.com</a>
+                </p>
+                <p>Tel: <a href="tel:0989565453" class="underline">098765453</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./src/journal.js"></script>
+</body>
+
+</html>
