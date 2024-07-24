@@ -1,4 +1,15 @@
-node_modules/
-dist/
-.parcel-cache/
-.cache/
+
+#Ignore environment files
+backend/.env
+
+#Node modules in both frontend and backend
+frontend/node_modules/
+backend/node_modules/
+
+#Build outputs and caches for frontend
+frontend/dist/
+frontend/.parcel-cache/
+frontend/.cache/
+
+# ignore log files
+*.log
