@@ -1,6 +1,8 @@
 //On pageload calls the fetch
 document.addEventListener("DOMContentLoaded", async () => {
-  const apiUrl = "http://localhost:3000/api/movies/popular";
+  // backend is deployed on render.com as a "web service" on following URL
+  const apiUrl =
+    "https://tmdb-api-refactor-3ftz.onrender.com/api/movies/popular";
   //Fetching Movies data
   try {
     const response = await fetch(apiUrl);
