@@ -1,7 +1,6 @@
 //On pageload calls the fetch
 document.addEventListener("DOMContentLoaded", async () => {
-  const apikey = "fddc45029159988c8c3aca4c9d7c477e";
-  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&language=en-US&page=1`;
+  const apiUrl = "http://localhost:3000/api/movies/popular";
   //Fetching Movies data
   try {
     const response = await fetch(apiUrl);
