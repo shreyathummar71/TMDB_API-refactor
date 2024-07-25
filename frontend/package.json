@@ -3,7 +3,7 @@
   "source": "index.html",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build"
+    "build": "parcel build index.html --dist-dir dist"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
