@@ -1,4 +1,4 @@
-This site was running in [RENDER](https://tmdb-api-refactor.onrender.com/)
+This site was running in [RENDER](https://tmdb-api-refactor-1.onrender.com)
 
 ## Refactor
 
@@ -19,6 +19,29 @@ This site was running in [RENDER](https://tmdb-api-refactor.onrender.com/)
  API_KEY="our API key"
  PORT=3000
 ```
+
+## Refactor code :
+
+### Why Async Function and await Keyword used in search movie event:
+
+The callback function is marked as async. This means it’s an asynchronous function.
+Asynchronous functions allow us to work with promises (like the one returned by searchData(searchTerm)).
+The await keyword is used to wait for the promise returned by searchData(searchTerm) to resolve.
+Essentially, it ensures that the code execution pauses until the promise is fulfilled (i.e., the data is retrieved).
+
+### Why function in try..catch Block
+
+The try Block:\
+Inside the try block, we have the main code that we want to execute.
+In the main code is the filtering of movies based on the search term.\
+The catch Block:\
+If an error occurs within the try block, execution jumps immediately to the corresponding catch block.
+The catch block is where we define what to do when an error occurs.
+In code, the catch block logs an error message to the console using console.error.\
+Why Use try...catch?:\
+Error handling is crucial for robust applications. Without it, unhandled errors can crash the entire program.
+By wrapping potentially problematic code in a try block, we ensure that even if an error occurs, the program won’t abruptly stop.
+Instead, it gracefully falls into the catch block, allowing us to handle the error (e.g., log it, display a user-friendly message, or take corrective action).
 
 ## How to deploy backed as a web service on render.com
 
