@@ -51,3 +51,32 @@ To deploy backed on render following steps are performed
 After deployment is finished backend API URL is as following:
 
 https://tmdb-api-refactor-3ftz.onrender.com/api/movies/popular
+
+### Securing API Keys:-
+1.) Project Structure:
+frontend/
+backend/
+.gitignore
+
+2) Backend Setup:-
+-Backend acts as a proxy between the frontend and external APIs.
+-Created .env File : Store API keys securely.
+-Initialize package.json using:- Run npm init -y in the backend folder.
+-Here Express Server is used as it is a framework built on the top of Node.js that simplifies the creation of web services and APIs
+-Install Dependencies to use Express Server using:- npm install express node-fetch dotenv
+-Create server.js: Set up your Express server
+-Install Cors :- To prevent unauthorized access and provide safety measures because both frontend and backend are running on different ports using-> npm install cors
+-Enable CORS: Add app.use(cors()) in server.js for security.
+-Running the Backend:a) Navigate to the backend folder: cd backend/
+                     b) Start the server using:- npm start (this runs: node server.js)
+3)Frontend Setup:
+-Frontend requests the Backend for API results
+-Navigate to the frontend folder: cd frontend/
+-Build and run the frontend:a) npm run build
+                            b) npm run dev
+
+4) .gitignore
+   -put .env file content  here
+                            
+
+
