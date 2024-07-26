@@ -20,8 +20,6 @@ This site was running in [RENDER](https://tmdb-api-refactor.onrender.com/)
  PORT=3000
 ```
 
-- Change in `.gitignore` file with this `!dist/`
-
 ## How to deploy backed as a web service on render.com
 
 To deploy backed on render following steps are performed
